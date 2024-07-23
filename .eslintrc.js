@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['airbnb', 'any-other-config', 'other-config', 'prettier'],
+  extends: ['airbnb', 'prettier'],
   overrides: [
     {
       env: {
@@ -20,5 +20,11 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', 'prettier'],
-  rules: { 'prettier/prettier': 'error' },
+  rules: {
+    'prettier/prettier': 'error',
+    'react/function-component-definition': [
+      2,
+      { namedcomponents: 'arrow-function' },
+    ],
+  },
 };
