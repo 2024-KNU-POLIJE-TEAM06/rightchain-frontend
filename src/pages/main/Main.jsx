@@ -30,9 +30,6 @@ const Main = () => {
 
         <S.RightContentContainer>
           <MainAuthContainer navigate={navigate} />
-          <S.HowToUseButton onClick={() => onContentButtonClick('landing')}>
-            How To Use Button
-          </S.HowToUseButton>
           <S.AdvertisementContainer>
             Advertisement Container
           </S.AdvertisementContainer>
