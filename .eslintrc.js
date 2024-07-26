@@ -22,6 +22,7 @@ module.exports = {
   plugins: ['react', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
+    'arrow-body-style': 'off',
     'react/function-component-definition': [
       2,
       { namedComponents: 'arrow-function' },
