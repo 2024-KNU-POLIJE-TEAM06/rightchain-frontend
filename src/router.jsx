@@ -4,6 +4,7 @@ import App from './App';
 
 import Main from './pages/main/Main';
 import Report from './pages/report/Report';
+import Search from './pages/search/Search';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'search',
-        element: <div>Search</div>,
+        element: <Search />,
       },
       {
         path: 'auth',
