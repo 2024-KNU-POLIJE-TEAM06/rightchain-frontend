@@ -3,106 +3,103 @@ import * as S from './Report.style';
 
 const Report = () => {
   const [formState, setFormState] = useState({
-    form: {
-      title: '',
-      type: '',
-      otherType: '',
-      content: '',
-      file: '',
-    },
-    error: '',
+    title: '',
+    type: '',
+    otherType: '',
+    content: '',
+    file: null,
   });
+  const [error, setError] = useState('');
 
-  const { form, error } = formState;
-  const { title, type, otherType, content, file } = form;
-
-  const titleRef = useRef(null);
-  const typeRef = useRef(null);
-  const otherTypeRef = useRef(null);
-  const contentRef = useRef(null);
+  const inputRefs = {
+    title: useRef(null),
+    type: useRef(null),
+    otherType: useRef(null),
+    content: useRef(null),
+  };
 
   const handleChange = e => {
-    const { name, value } = e.target;
+    const { name, value, type, files } = e.target;
     setFormState(prevState => ({
       ...prevState,
-      form: {
-        ...prevState.form,
-        [name]: value,
-      },
+      [name]: type === 'file' ? files[0] : value,
     }));
   };
 
-  const onClickSubmit = () => {
-    let newError = '';
+  const validateForm = () => {
+    const { title, type, otherType, content } = formState;
     if (!title) {
-      titleRef.current.focus();
-      newError = 'Title is required';
-    } else if (!type) {
-      typeRef.current.focus();
-      newError = 'Type is required';
-    } else if (type === 'other' && !otherType) {
-      otherTypeRef.current.focus();
-      newError = 'Type is required';
-    } else if (!content) {
-      contentRef.current.focus();
-      newError = 'Content is required';
-    } else {
-      localStorage.setItem('report', JSON.stringify(form));
+      inputRefs.title.current.focus();
+      return 'Title is required';
     }
+    if (!type) {
+      inputRefs.type.current.focus();
+      return 'Type is required';
+    }
+    if (type === 'other' && !otherType) {
+      inputRefs.otherType.current.focus();
+      return 'Other Type is required';
+    }
+    if (!content) {
+      inputRefs.content.current.focus();
+      return 'Content is required';
+    }
+    return '';
+  };
 
-    setFormState(prevState => ({
-      ...prevState,
-      error: newError,
-    }));
+  const onClickSubmit = () => {
+    const newError = validateForm();
+    if (newError) {
+      setError(newError);
+    } else {
+      localStorage.setItem('report', JSON.stringify(formState));
+      setError(''); // 성공적으로 제출했을 때 에러 메시지 초기화
+      // 추가적인 제출 로직을 여기에 추가할 수 있습니다.
+    }
   };
 
   return (
     <S.Wrapper>
       <S.InputTitle
         name="title"
-        value={title}
+        value={formState.title}
         placeholder="Title"
         onChange={handleChange}
-        ref={titleRef}
+        ref={inputRefs.title}
       />
       <S.InputType
         name="type"
-        value={type}
+        value={formState.type}
         onChange={handleChange}
-        ref={typeRef}
+        ref={inputRefs.type}
       >
         <option value="" disabled>
           Select Violation Type
         </option>
-        <option value="discrimination">Discrimination</option>{' '}
-        <option value="harassment">Harassment</option>{' '}
-        <option value="privacy_violation">Privacy Violation</option>{' '}
-        <option value="freedom_of_speech">Freedom of Speech Violation</option>{' '}
-        <option value="property_rights">Property Rights Violation</option>{' '}
+        <option value="discrimination">Discrimination</option>
+        <option value="harassment">Harassment</option>
+        <option value="privacy_violation">Privacy Violation</option>
+        <option value="freedom_of_speech">Freedom of Speech Violation</option>
+        <option value="property_rights">Property Rights Violation</option>
         <option value="other">Other</option>
       </S.InputType>
-      {type === 'other' && (
+      {formState.type === 'other' && (
         <S.InputOtherType
           name="otherType"
-          value={otherType}
+          value={formState.otherType}
           placeholder="Other Type"
           onChange={handleChange}
-          ref={otherTypeRef}
+          ref={inputRefs.otherType}
         />
       )}
       <S.InputContent
         name="content"
-        value={content}
+        value={formState.content}
         placeholder="Content"
         onChange={handleChange}
-        ref={contentRef}
+        ref={inputRefs.content}
       />
-      <S.InputFile
-        name="file"
-        value={file}
-        type="file"
-        onChange={handleChange}
-      />
+      <S.InputFile name="file" type="file" onChange={handleChange} />
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <S.ButtonSubmit onClick={onClickSubmit}>Submit</S.ButtonSubmit>
     </S.Wrapper>

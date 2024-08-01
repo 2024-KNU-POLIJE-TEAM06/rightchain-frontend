@@ -24,10 +24,6 @@ const router = createBrowserRouter([
         element: <Search />,
       },
       {
-        path: 'auth',
-        element: <div>Auth</div>,
-      },
-      {
         path: 'landing',
         element: <div>Landing</div>,
       },
