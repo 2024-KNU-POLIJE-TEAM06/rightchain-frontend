@@ -1,55 +1,76 @@
 import styled from 'styled-components';
 
-export const MainWrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-`;
-
-export const TitleWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  border: 1px solid black;
-  border-radius: 10px;
-`;
-
-export const Title = styled.h1`
-  font-size: 2em;
-  text-align: center;
-  color: Green;
-`;
-
-export const ContentWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
   flex-direction: row;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 1rem 2rem;
 `;
 
-export const LeftContentContainer = styled.div``;
-
-export const ContentButtonContainer = styled.div`
+export const LeftWrapper = styled.div`
   display: flex;
-  justify-content: center;
-`;
-
-export const ContentButton = styled.button``;
-
-export const ReportContainer = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-export const RightContentContainer = styled.div`
-  display: flex;
-  justify-content: center;
   flex-direction: column;
+  width: 70%;
+  height: 100%;
+  padding: 1rem 3rem;
 `;
 
-export const AuthButtonWrapper = styled.div`
+export const RightWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+  padding: 1rem;
 `;
 
-export const HowToUseButton = styled.button``;
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 30%;
+`;
 
-export const AdvertisementContainer = styled.div``;
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 280px;
+  height: 70px;
+
+  margin-bottom: 5vh;
+`;
+
+export const ReportListWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 70vh;
+
+  padding: 0 4rem;
+`;
+
+export const AuthWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 40vh;
+
+  margin-bottom: 20px;
+`;
+
+export const IntroductionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+
+  margin-bottom: 20px;
+`;

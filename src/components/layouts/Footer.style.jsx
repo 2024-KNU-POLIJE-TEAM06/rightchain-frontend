@@ -16,7 +16,7 @@ export const Content = styled.div`
   position: relative;
   width: 100%;
 
-  padding: 0 3rem;
+  padding: 0;
   padding-bottom: 2rem;
   border-top: 1px solid #e0e0e0;
 `;

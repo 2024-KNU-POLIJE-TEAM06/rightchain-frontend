@@ -1,41 +1,50 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import MainAuthContainer from '../../components/auth/MainAuthContainer';
 import * as S from './Main.style';
+import Button from '../../common/Button';
+import AuthContainer from '../../components/main/AuthContainer';
+import ReportList from '../../components/reportList/ReportList';
+import Introduction from '../../components/main/Introduction';
 
 const Main = () => {
   const navigate = useNavigate();
 
-  const onContentButtonClick = type => {
-    navigate(`/${type}`);
-  };
-
   return (
-    <S.MainWrapper>
-      <S.TitleWrapper>
-        <S.Title>RIGHT CHAIN</S.Title>
-      </S.TitleWrapper>
-      <S.ContentWrapper>
-        <S.LeftContentContainer>
-          <S.ContentButtonContainer>
-            <S.ContentButton onClick={() => onContentButtonClick('report')}>
-              Report
-            </S.ContentButton>
-            <S.ContentButton onClick={() => onContentButtonClick('search')}>
-              Search
-            </S.ContentButton>
-          </S.ContentButtonContainer>
-          <S.ReportContainer>Report Container</S.ReportContainer>
-        </S.LeftContentContainer>
-
-        <S.RightContentContainer>
-          <MainAuthContainer navigate={navigate} />
-          <S.AdvertisementContainer>
-            Advertisement Container
-          </S.AdvertisementContainer>
-        </S.RightContentContainer>
-      </S.ContentWrapper>
-    </S.MainWrapper>
+    <S.Wrapper>
+      <S.LeftWrapper>
+        <S.ButtonContainer>
+          <S.ButtonWrapper>
+            <Button
+              name="Write Report"
+              type="page"
+              action={() => {
+                navigate('write');
+              }}
+            />
+          </S.ButtonWrapper>
+          <S.ButtonWrapper>
+            <Button
+              name="Search Report"
+              type="page"
+              action={() => {
+                navigate('search');
+              }}
+            />
+          </S.ButtonWrapper>
+        </S.ButtonContainer>
+        <S.ReportListWrapper>
+          <ReportList />
+        </S.ReportListWrapper>
+      </S.LeftWrapper>
+      <S.RightWrapper>
+        <S.AuthWrapper>
+          <AuthContainer />
+        </S.AuthWrapper>
+        <S.IntroductionWrapper>
+          <Introduction />
+        </S.IntroductionWrapper>
+      </S.RightWrapper>
+    </S.Wrapper>
   );
 };
 

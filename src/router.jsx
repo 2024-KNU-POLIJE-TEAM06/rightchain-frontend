@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         element: <Main />,
       },
       {
-        path: 'report',
+        path: 'write',
         element: <Report />,
       },
       {
