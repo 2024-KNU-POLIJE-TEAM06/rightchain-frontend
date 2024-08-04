@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import * as S from './Main.style';
 import Button from '../../common/Button';
 import AuthContainer from '../../components/main/AuthContainer';
-import ReportList from '../../components/reportList/ReportList';
+import ReportList from '../../common/reportList/ReportList';
 import Introduction from '../../components/main/Introduction';
 
 const Main = () => {

@@ -1,61 +1,45 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 20px 20px;
-`;
-
-export const SearchUtilContainer = styled.div`
-  width: 30%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  margin-bottom: 20px;
+
+  width: 100%;
+  height: 100vh;
+
+  padding: 0 3rem;
 `;
 
-export const Title = styled.h1`
-  font-size: 2em;
-  text-align: center;
-  color: Green;
+export const BannerWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  height: 10%;
+
+  margin-bottom: 1.5rem;
 `;
 
-export const SearchContainer = styled.div`
+export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-  margin-bottom: 20px;
-`;
 
-export const InputSearch = styled.input`
-  width: 200px;
-  height: 30px;
-  margin-bottom: 10px;
-`;
-
-export const ButtonSearch = styled.button`
-  width: 100px;
-  height: 30px;
-  margin-bottom: 10px;
+  width: 100%;
+  height: 90%;
 `;
 
 export const CategoryWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
+
+  width: 30%;
+  height: 100%;
 `;
 
 export const ReportListWrapper = styled.div`
-  width: 70%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  margin-bottom: 20px;
+
+  width: 70%;
+  height: 100%;
 `;

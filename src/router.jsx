@@ -3,7 +3,6 @@ import React from 'react';
 import App from './App';
 
 import Main from './pages/main/Main';
-import Report from './pages/report/Report';
 import Search from './pages/search/Search';
 
 const router = createBrowserRouter([
@@ -17,11 +16,19 @@ const router = createBrowserRouter([
       },
       {
         path: 'write',
-        element: <Report />,
+        element: <div>write</div>,
       },
       {
         path: 'search',
-        element: <Search />,
+        element: <Search mode="Search" />,
+      },
+      {
+        path: 'my-report',
+        element: <Search mode="My Reports" />,
+      },
+      {
+        path: 'my-like',
+        element: <Search mode="My Likes" />,
       },
       {
         path: 'auth',

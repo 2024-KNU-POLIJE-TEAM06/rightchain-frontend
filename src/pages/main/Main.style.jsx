@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
 
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
 `;
 
 export const LeftWrapper = styled.div`
@@ -50,7 +50,7 @@ export const ReportListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 70vh;
+  height: 80vh;
 
   padding: 0 4rem;
 `;

@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 
   width: 100%;
   height: 100%;
@@ -17,6 +17,7 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
   width: 90%;
   height: 25%;
+  margin-bottom: 15px;
 `;
 
 export const MessageWrapper = styled.div`
@@ -29,6 +30,7 @@ export const MessageWrapper = styled.div`
 
   font-size: 22px;
   text-align: center;
+  margin-top: 20px;
 `;
 
 export const MyInfoWrapper = styled.div`
@@ -39,5 +41,5 @@ export const MyInfoWrapper = styled.div`
   width: 90%;
   heigh: 50%;
 
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 `;

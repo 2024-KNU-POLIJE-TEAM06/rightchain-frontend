@@ -41,7 +41,7 @@ const MyInfo = () => {
           name="My Likes"
           type="auth"
           action={() => {
-            navigate('my-likes');
+            navigate('my-like');
           }}
         />
       </S.ButtonWrapper>
