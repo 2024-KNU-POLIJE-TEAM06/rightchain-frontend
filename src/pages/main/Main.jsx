@@ -12,21 +12,17 @@ const Main = () => {
 
   return (
     <S.MainWrapper>
-      <S.TitleWrapper>
-        <S.Title>RIGHT CHAIN</S.Title>
-      </S.TitleWrapper>
       <S.ContentWrapper>
         <S.LeftContentContainer>
           <S.ContentButtonContainer>
             <S.ContentButton onClick={() => onContentButtonClick('report')}>
-              Report
+              Write Report
             </S.ContentButton>
             <S.ContentButton onClick={() => onContentButtonClick('search')}>
-              Search
+              Report Search
             </S.ContentButton>
           </S.ContentButtonContainer>
-          <S.ReportContainer>Report Container</S.ReportContainer>
-        </S.LeftContentContainer>
+               </S.LeftContentContainer>
 
         <S.RightContentContainer>
           <MainAuthContainer navigate={navigate} />

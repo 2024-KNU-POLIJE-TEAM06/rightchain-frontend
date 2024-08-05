@@ -25,18 +25,31 @@ export const ContentWrapper = styled.div`
   flex-direction: row;
 `;
 
-export const LeftContentContainer = styled.div``;
+export const LeftContentContainer = styled.div`
+`;
 
 export const ContentButtonContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
 
-export const ContentButton = styled.button``;
+export const ContentButton = styled.button`
+  background: white;
+  height: 50px;
+  width: 150px;
+  border: 1px white;
+  box-shadow: 1px 2px #888888;
+  cursor: pointer;
+  justify-content: center;
+  padding: 5px;
+  margin: 30px;
+  border-radius: 5px;
+`;
 
 export const ReportContainer = styled.div`
   display: flex;
   justify-content: center;
+  
 `;
 
 export const RightContentContainer = styled.div`

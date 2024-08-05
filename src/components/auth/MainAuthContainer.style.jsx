@@ -22,4 +22,5 @@ export const Button = styled.button`
   padding: 5px;
   margin: 5px;
   cursor: pointer;
+  
 `;

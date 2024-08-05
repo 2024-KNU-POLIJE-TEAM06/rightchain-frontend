@@ -1,24 +1,35 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  width: 100%;
-  height: 3rem;
+  position: relative;
+  width: auto;
+  height: 65px;
   padding-bottom: 0.5rem;
-
-  align-items: start;
+  border-bottom: 2px solid green;
 `;
 
+export const Logo = styled.img`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 2rem;
+`;
+
+
 export const ButtonHome = styled.button`
+  height: 40px;
+  width: 120px;
   background: white;
-  border: 1px solid black;
+  border: 1px white;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   margin-top: 1rem;
   cursor: pointer;
+  color: green;
+  box-shadow: 1px 2px  #00000014;
+`;
 
-  box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
+export const Button = styled.button`
+  cursor: pointer;
 `;

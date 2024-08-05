@@ -5,6 +5,8 @@ import App from './App';
 import Main from './pages/main/Main';
 import Report from './pages/report/Report';
 import Search from './pages/search/Search';
+import Howtouse from './pages/howtouse/Howtouse';
+
 
 const router = createBrowserRouter([
   {
@@ -28,8 +30,8 @@ const router = createBrowserRouter([
         element: <div>Auth</div>,
       },
       {
-        path: 'landing',
-        element: <div>Landing</div>,
+        path: 'Howtouse',
+        element: <Howtouse />,
       },
     ],
   },
