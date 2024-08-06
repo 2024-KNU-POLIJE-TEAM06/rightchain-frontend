@@ -6,6 +6,7 @@ import Main from './pages/main/Main';
 import Report from './pages/report/Report';
 import Search from './pages/search/Search';
 import Howtouse from './pages/howtouse/Howtouse';
+import Landing from './pages/landing/Landing';
 
 
 const router = createBrowserRouter([
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: '',
+        element: <Landing />
+      },
+      {
+        path: 'main',
         element: <Main />,
       },
       {
@@ -32,7 +37,7 @@ const router = createBrowserRouter([
       {
         path: 'Howtouse',
         element: <Howtouse />,
-      },
+      }, 
     ],
   },
 ]);

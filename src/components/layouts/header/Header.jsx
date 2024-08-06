@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import * as S from './Header.style'; // Memastikan semua elemen telah diimpor
+import * as S from './Header.style';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <S.Wrapper>
-      <S.Button onClick ={() => handleClick('')}>
+      <S.Button onClick ={() => handleClick('main')}>
       <S.Logo src="/logo.png" alt="logo" />
       </S.Button>
       <S.ButtonHome onClick={() => handleClick('/howtouse')}>
