@@ -1,5 +1,24 @@
 import styled from 'styled-components';
 
+export const Wrapper= styled.div`
+  position: relative;
+  width: 1400px;
+  height: 65px;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid green;
+`;
+
+export const Banner = styled.img`
+width: 369px;
+height: 70px;
+top: 1px;
+left: 572px;
+gap: 0px;
+opacity: 0px;
+cursor: pointer;
+position: absolute;
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: row; 
@@ -78,13 +97,14 @@ position: absolute;
 export const Button = styled.a`
 width: 130px;
 height: 44px;
-top: 166px;
+top: 26px;
 left: 726px;
 gap: 0px;
 opacity: 0px;
 margin-left: 100px;
 margin-right: -105px;
 cursor: pointer;
+position: relative;
 `;
 
 export const Button1 = styled.a`
@@ -97,6 +117,7 @@ opacity: 0px;
 margin-left: 100px;
 margin-right: -105px;
 cursor: pointer;
+position: relative;
 `;
 
 export const Button2 = styled.a`
@@ -109,5 +130,5 @@ opacity: 0px;
 margin-left: 100px;
 margin-right: -105px;
 cursor: pointer;
-position: absolute;
+position: relative;
 `;

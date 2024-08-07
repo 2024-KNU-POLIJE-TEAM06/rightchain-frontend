@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 import Header from './components/layouts/header/Header';
 import Footer from './components/layouts/footer/Footer';
@@ -17,13 +17,21 @@ const Wrapper = styled.div`
 `;
 
 const Layout = () => {
+  const location = useLocation();
+
+  // Menentukan rute di mana Header dan Footer tidak ditampilkan
+  const hideHeaderFooterRoutes = ['/', '/Howtouse'];
+
+  // Cek apakah rute saat ini termasuk dalam daftar rute yang tidak menampilkan Header dan Footer
+  const shouldHideHeaderFooter = hideHeaderFooterRoutes.includes(location.pathname);
+
   return (
     <>
-      <Header />
+      {!shouldHideHeaderFooter && <Header />}
       <Wrapper>
         <Outlet />
       </Wrapper>
-      <Footer />
+      {!shouldHideHeaderFooter && <Footer />}
     </>
   );
 };

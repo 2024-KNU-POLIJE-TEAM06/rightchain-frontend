@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import MainAuthContainer from '../../components/auth/MainAuthContainer';
+import Card from '../../components/card/Card';
 import * as S from './Main.style';
 
 const Main = () => {
@@ -18,19 +19,26 @@ const Main = () => {
             <S.ContentButton onClick={() => onContentButtonClick('report')}>
               Write Report
             </S.ContentButton>
-            <S.ContentButton onClick={() => onContentButtonClick('search')}>
+            <S.ContentButton1 onClick={() => onContentButtonClick('search')}>
               Report Search
-            </S.ContentButton>
+            </S.ContentButton1>
           </S.ContentButtonContainer>
                </S.LeftContentContainer>
 
         <S.RightContentContainer>
           <MainAuthContainer navigate={navigate} />
           <S.AdvertisementContainer>
-            Advertisement Container
+            You can use a wider variety of services after logging in.
           </S.AdvertisementContainer>
+          <S.Logo src="logo20.png" alt="logo"/>
+          <S.AdvertisementContainer1>
+          Sue your unfairness!
+          Observe the honest process!
+          </S.AdvertisementContainer1>
+          <Card />
         </S.RightContentContainer>
       </S.ContentWrapper>
+      <></>
     </S.MainWrapper>
   );
 };

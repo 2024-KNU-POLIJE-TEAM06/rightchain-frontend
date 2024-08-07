@@ -15,6 +15,16 @@ width: 80px;
   height: 81.82px;
 `;
 
+export const Logo2 = styled.img`
+width: 104px;
+height: 96px;
+top: 454px;
+left: 1101px;
+gap: 0px;
+opacity: 0px;
+
+`;
+
 export const Logo1 = styled.img`
 width: 110px;
   height: 88.77px;
@@ -86,16 +96,12 @@ color: #141F39;
 `;
 
 export const Heading2 = styled.h1`
-height: 0px;
-margin: 25%;
-display: flex; 
 font-family: Space Grotesk;
 font-size: 25px;
 font-weight: 700;
 line-height: 44px;
 letter-spacing: -1px;
 text-align: center;
-justify-content: center;
 color: #141F39;
 `;
 
@@ -125,7 +131,6 @@ color: #4F4F4F;
 export const Description2 = styled.p`
 width: 189px;
 height: 80px;
-margin: 0px;
 font-family: Inter;
 font-size: 15px;
 font-weight: 400;

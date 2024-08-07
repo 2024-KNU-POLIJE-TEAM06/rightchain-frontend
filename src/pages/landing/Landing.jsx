@@ -4,6 +4,9 @@ import * as S from './Landing.style';
 const Landing = () => {
     return (
         <div>
+            <S.Wrapper>
+                    <S.Banner src="logo.png" alt="logo"/>
+            </S.Wrapper>
             <S.Container>
                 <S.Logo src="logo.jpeg" alt="logo"/>
                 <S.Button href="">About Us</S.Button>

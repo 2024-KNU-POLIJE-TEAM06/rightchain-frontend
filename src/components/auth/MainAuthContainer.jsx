@@ -9,8 +9,7 @@ const AuthRedirectContainer = ({ navigate }) => {
 
   return (
     <S.AuthButtonContainer>
-      <S.Button onClick={onAuthButtonClick}>Sign Up</S.Button>
-      <S.Button onClick={onAuthButtonClick}>Sign In</S.Button>
+      <S.Button onClick={onAuthButtonClick}><S.Logo src="image.png"/><S.Text>continue with</S.Text></S.Button>
     </S.AuthButtonContainer>
   );
 };

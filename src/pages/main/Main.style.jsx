@@ -34,16 +34,33 @@ export const ContentButtonContainer = styled.div`
 `;
 
 export const ContentButton = styled.button`
-  background: white;
-  height: 50px;
-  width: 150px;
-  border: 1px white;
-  box-shadow: 1px 2px #888888;
-  cursor: pointer;
-  justify-content: center;
-  padding: 5px;
-  margin: 30px;
-  border-radius: 5px;
+width: 322px;
+height: 86px;
+top: 94px;
+left: 234px;
+gap: 0px;
+border: 1px white;
+border-radius: 0.5rem;
+opacity: 0px;
+background: #FFFFFF;
+box-shadow: 0px 4px 4px 2px #A2A2A240;
+position: absolute;
+cursor: pointer;
+`;
+
+export const ContentButton1 = styled.button`
+  width: 322px;
+height: 86px;
+top: 94px;
+left: 598px;
+gap: 0px;
+border: 1px white;
+border-radius: 0.5rem;
+opacity: 0px;
+box-shadow: 0px 4px 4px 2px #A2A2A240;
+background: #FFFFFF;
+position: absolute;
+cursor: pointer;
 `;
 
 export const ReportContainer = styled.div`
@@ -65,4 +82,47 @@ export const AuthButtonWrapper = styled.div`
 
 export const HowToUseButton = styled.button``;
 
-export const AdvertisementContainer = styled.div``;
+export const AdvertisementContainer = styled.div`
+width: 320px;
+height: 104px;
+top: 196px;
+left: 1078px;
+gap: 0px;
+opacity: 0px;
+font-family: .ThonburiUI;
+font-size: 22px;
+font-weight: 300;
+line-height: 44px;
+letter-spacing: -1px;
+text-align: center;
+color: #000000;
+position: absolute;
+
+`;
+
+export const Logo = styled.img`
+width: 365px;
+height: 342px;
+top: 300px;
+left: 1058px;
+gap: 0px;
+opacity: 0px;
+position: absolute;
+`;
+
+export const AdvertisementContainer1 = styled.div`
+width: 320px;
+height: 104px;
+top: 673px;
+left: 1069px;
+gap: 0px;
+opacity: 0px;
+font-family: .ThonburiUI;
+font-size: 22px;
+font-weight: 300;
+line-height: 44px;
+letter-spacing: -1px;
+text-align: center;
+color: #000000;
+position: absolute;
+`;

@@ -20,6 +20,7 @@ const Howtouse = () => {
           The more detailed the content, the better.</S.Description1>
         </S.ContentWrapper1>
         <S.ContentWrapper2>
+          <S.Logo2 src="illustration-icon.png" alt="logo"/>
           <S.Heading2>STEP 3</S.Heading2>
           <S.Description2>After writing is completed, 
           you can see the real-time process transparently through the blockchain.</S.Description2>

@@ -6,8 +6,14 @@ const Header = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleClick = (type) => {
-    navigate(type);
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('accessToken');
+    setIsLoggedIn(false);
+    handleNavigation('/login'); // Assuming you have a login route
   };
 
   useEffect(() => {
@@ -17,13 +23,17 @@ const Header = () => {
 
   return (
     <S.Wrapper>
-      <S.Button onClick ={() => handleClick('main')}>
-      <S.Logo src="/logo.png" alt="logo" />
+      <S.Button onClick={() => handleNavigation('/')}>
+        <S.Logo src="/logo.png" alt="logo" />
       </S.Button>
-      <S.ButtonHome onClick={() => handleClick('/howtouse')}>
+      <S.ButtonHome onClick={() => handleNavigation('/howtouse')}>
         How To Use?
       </S.ButtonHome>
-      {isLoggedIn && <S.ButtonHome>Logout</S.ButtonHome>}
+      {isLoggedIn && (
+        <S.ButtonHome onClick={handleLogout}>
+          Logout
+        </S.ButtonHome>
+      )}
     </S.Wrapper>
   );
 };
