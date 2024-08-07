@@ -14,7 +14,7 @@ export const ModalBackdrop = styled.div`
 `;
 
 export const ModalContent = styled.div`
-    background: #729E4F;
+    background: white;
     border-radius: 10px;
     width: 100%;
     max-width: 700px;
@@ -36,11 +36,22 @@ export const CloseButton = styled.button`
     cursor: pointer;
 `;
 
+export const MinimizeButton = styled.button`
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    background: none;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    color: black;
+`;
+
 export const TitleBox = styled.div`
     width: 80%;
     height: 50px;
-    background: #2F590F;
-    color: white;
+    background: none;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,17 +59,18 @@ export const TitleBox = styled.div`
     font-size: 20px;
     font-weight: 700;
     border-radius: 8px;
-    margin-top: 20px;
+    margin-top: 5px;
     margin-bottom: 30px;
     box-sizing: border-box;
 `;
 
 export const TextList = styled.div`
     font-family: 'Poppins', sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     letter-spacing: -1px;
     text-align: left;
     margin-top: 10px;
+    padding: 10px;
     width: 100%;
-    color: #ffffff;
+    color: black;
 `;
