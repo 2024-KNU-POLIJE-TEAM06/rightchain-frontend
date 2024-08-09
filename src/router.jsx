@@ -4,6 +4,7 @@ import App from './App';
 
 import Main from './pages/main/Main';
 import Search from './pages/search/Search';
+import Write from './pages/write/Write';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'write',
-        element: <div>write</div>,
+        element: <Write />,
       },
       {
         path: 'search',

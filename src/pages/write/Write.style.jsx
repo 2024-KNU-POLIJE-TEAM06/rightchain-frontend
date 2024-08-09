@@ -36,10 +36,10 @@ export const CategoryWrapper = styled.div`
   height: 100%;
 `;
 
-export const ReportListWrapper = styled.div`
+export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 75%;
+  width: 80%;
   height: 100%;
 `;
