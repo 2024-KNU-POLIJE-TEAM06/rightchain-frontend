@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import * as S from './Search.style';
 import Banner from '../../common/Banner';
 import ReportList from '../../common/reportList/ReportList';
+import MyReportList from '../../common/reportList/MyReportList';
 import CategoryList from '../../common/categoryList/CategoryList';
 import { useAuth } from '../../context/AuthContext';
 
@@ -28,7 +29,7 @@ const Search = ({ mode }) => {
           <CategoryList />
         </S.CategoryWrapper>
         <S.ReportListWrapper>
-          <ReportList />
+          <MyReportList />
         </S.ReportListWrapper>
       </S.ContentWrapper>
     </S.Wrapper>
