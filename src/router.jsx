@@ -3,10 +3,9 @@ import React from 'react';
 import App from './App';
 
 import Main from './pages/main/Main';
-import Report from './pages/report/Report';
 import Search from './pages/search/Search';
-import Howtouse from './pages/howtouse/Howtouse';
-
+import Write from './pages/write/Write';
+import EachReport from './pages/report/EachReport';
 
 const router = createBrowserRouter([
   {
@@ -18,20 +17,32 @@ const router = createBrowserRouter([
         element: <Main />,
       },
       {
-        path: 'report',
-        element: <Report />,
+        path: 'write',
+        element: <Write />,
       },
       {
         path: 'search',
-        element: <Search />,
+        element: <Search mode="Search" />,
+      },
+      {
+        path: 'my-report',
+        element: <Search mode="My Reports" />,
+      },
+      {
+        path: 'my-like',
+        element: <Search mode="My Likes" />,
       },
       {
         path: 'auth',
         element: <div>Auth</div>,
       },
       {
-        path: 'Howtouse',
-        element: <Howtouse />,
+        path: 'landing',
+        element: <div>Landing</div>,
+      },
+      {
+        path: 'each-report',
+        element: <EachReport />,
       },
     ],
   },
