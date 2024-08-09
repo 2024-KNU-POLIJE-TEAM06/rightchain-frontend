@@ -5,6 +5,7 @@ import App from './App';
 import Main from './pages/main/Main';
 import Search from './pages/search/Search';
 import Write from './pages/write/Write';
+import EachReport from './pages/report/EachReport';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: 'landing',
         element: <div>Landing</div>,
+      },
+      {
+        path: 'each-report',
+        element: <EachReport />,
       },
     ],
   },
