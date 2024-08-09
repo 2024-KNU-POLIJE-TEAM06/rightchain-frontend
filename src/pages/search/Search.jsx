@@ -19,8 +19,7 @@ const Search = ({ mode }) => {
             <CategoryList type="search" />
           </S.CategoryWrapper>
           <S.ReportListWrapper>
-            {/* Conditionally render the appropriate report list based on mode */}
-            {mode === "My Reports" ? <MyReportList /> : <ReportList />}
+            {mode === 'My Reports' ? <MyReportList /> : <ReportList />}
           </S.ReportListWrapper>
         </S.ContentWrapper>
       </S.Wrapper>

@@ -11,7 +11,7 @@ export const ScrollContainer = styled.div`
 `;
 
 export const MainCard = styled.div`
-  background: #D6E8C7;
+  background: #d6e8c7;
   box-shadow: 0px 4px 4px 2px #00000040;
   border-radius: 12px;
   display: flex;
@@ -26,7 +26,7 @@ export const MainCard = styled.div`
 `;
 
 export const CardTitleBox = styled.div`
-  background: #A1C188;
+  background: #a1c188;
   width: 70%;
   height: 50px;
   position: relative;
@@ -43,7 +43,7 @@ export const CardTitleBox = styled.div`
 `;
 
 export const CategoryBox = styled.div`
-  background: #D6E8C7;
+  background: #d6e8c7;
   width: 95%;
   height: auto;
   margin-top: 10px;
@@ -74,7 +74,7 @@ export const DateText = styled.span`
   font-size: 18px;
   font-weight: 700;
   text-align: right;
-  color: #6E9154;
+  color: #6e9154;
 `;
 
 export const AuthorText = styled.span`
@@ -82,12 +82,12 @@ export const AuthorText = styled.span`
   font-size: 15px;
   font-weight: 300;
   text-align: right;
-  color: #6E9154;
+  color: #6e9154;
   width: 100%;
   text-align: right;
   padding: 10px;
   border-radius: 8px;
-  color: #6E9154;
+  color: #6e9154;
 `;
 
 export const DescText = styled.span`
@@ -101,9 +101,9 @@ export const DescText = styled.span`
 `;
 
 export const BottomBox = styled.div`
-  background: #729E4F;
+  background: #729e4f;
   width: 30%;
-  height: 40px; 
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
