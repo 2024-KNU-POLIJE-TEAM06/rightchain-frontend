@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import rightChain from '../../asset/title.png';
-import tempImage1 from '../../asset/temp-image-1.png';
-import tempImage2 from '../../asset/temp-image-2.png';
 import Modal from './PopupReport';
 
 import {
@@ -51,7 +49,7 @@ const EachReport = () => {
             </ReportBox>
             <BottomSection>
                 <TextContainer>
-                    <Text>📎click and input your file</Text>
+                    <Text>📎click and input your file </Text>
                 </TextContainer>
                 <ButtonContainer>
                     <BottomButton onClick={handleOpenModal}>BlockChain</BottomButton>

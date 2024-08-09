@@ -61,18 +61,6 @@ export const Description = styled.div`
     white-space: pre-wrap;
 `;
 
-// export const PhotoList = styled.div`
-//     flex: 1;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 10px;
-
-//     img {
-//         width: 100%;
-//         height: auto;
-//     }
-// `;
-
 export const BottomSection = styled.div`
     display: flex;
     justify-content: space-between;

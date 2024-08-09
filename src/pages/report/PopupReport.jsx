@@ -7,7 +7,7 @@ const Modal = ({ isOpen, onClose, children }) => {
     if (!isOpen) return null;
 
     const handleMinimize = () => {
-        // setIsMinimized(prevState => !prevState);
+        // setIsMinimized(prevState => !prevState); 
     };
 
     return (
