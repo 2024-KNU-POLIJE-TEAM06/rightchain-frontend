@@ -16,6 +16,9 @@ const Card = () => {
         <S.Date>
           Date
         </S.Date>
+        <S.Author>
+          Author
+        </S.Author>
         <S.Likeborder>
           <S.Liketitle>
             Number of Likes
@@ -39,6 +42,9 @@ const Card = () => {
         <S.Date>
           Date 
         </S.Date>
+        <S.Author>
+          Author
+        </S.Author>
         <S.Likeborder>
           <S.Liketitle>
             Number of Likes
@@ -62,6 +68,9 @@ const Card = () => {
         <S.Date>
           Date
         </S.Date>
+        <S.Author>
+          Author
+        </S.Author>
         <S.Likeborder>
           <S.Liketitle>
             Number of Likes
@@ -85,6 +94,9 @@ const Card = () => {
         <S.Date>
           Date
         </S.Date>
+        <S.Author>
+          Author
+        </S.Author>
         <S.Likeborder>
           <S.Liketitle>
             Number of Likes
@@ -108,6 +120,9 @@ const Card = () => {
         <S.Date>
           Date
         </S.Date>
+        <S.Author>
+          Author
+        </S.Author>
         <S.Likeborder>
           <S.Liketitle>
             Number of Likes
@@ -131,6 +146,9 @@ const Card = () => {
         <S.Date>
           Date
         </S.Date>
+        <S.Author>
+          Author
+        </S.Author>
         <S.Likeborder>
           <S.Liketitle>
             Number of Likes
@@ -154,6 +172,9 @@ const Card = () => {
         <S.Date>
           Date
         </S.Date>
+        <S.Author>
+          Author
+        </S.Author>
         <S.Likeborder>
           <S.Liketitle>
             Number of Likes
@@ -177,6 +198,9 @@ const Card = () => {
         <S.Date>
           Date
         </S.Date>
+        <S.Author>
+          Author
+        </S.Author>
         <S.Likeborder>
           <S.Liketitle>
             Number of Likes
@@ -200,6 +224,9 @@ const Card = () => {
         <S.Date>
           Date
         </S.Date>
+        <S.Author>
+          Author
+        </S.Author>
         <S.Likeborder>
           <S.Liketitle>
             Number of Likes
@@ -223,6 +250,9 @@ const Card = () => {
         <S.Date>
           Date
         </S.Date>
+        <S.Author>
+          Author
+        </S.Author>
         <S.Likeborder>
           <S.Liketitle>
             Number of Likes
@@ -247,6 +277,9 @@ const Card = () => {
         <S.Date>
           Date
         </S.Date>
+        <S.Author>
+          Author
+        </S.Author>
         <S.Likeborder>
           <S.Liketitle>
             Number of Likes

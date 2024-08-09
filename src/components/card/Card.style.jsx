@@ -139,3 +139,19 @@ gap: 0px;
 opacity: 0px;
 position: absolute;
 `;
+
+export const Author = styled.p`
+width: 37px;
+height: 17px;
+top: 143px;
+left: 276px;
+gap: 0px;
+opacity: 0px;
+font-family: Poppins;
+font-size: 11px;
+font-weight: 300;
+line-height: 16.5px;
+text-align: right;
+color: #6E9154;
+position: absolute;
+`;
