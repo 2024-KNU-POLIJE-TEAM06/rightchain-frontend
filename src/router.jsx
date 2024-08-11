@@ -6,6 +6,8 @@ import Main from './pages/main/Main';
 import Search from './pages/search/Search';
 import Write from './pages/write/Write';
 import EachReport from './pages/report/EachReport';
+import Howtouse from './pages/howtouse/Howtouse';
+import Landing from './pages/landing/Landing';
 
 const router = createBrowserRouter([
   {
@@ -37,12 +39,16 @@ const router = createBrowserRouter([
         element: <div>Auth</div>,
       },
       {
-        path: 'landing',
-        element: <div>Landing</div>,
-      },
-      {
         path: 'each-report',
         element: <EachReport />,
+      },
+      {
+        path: 'landing',
+        element: <Landing />
+      },
+      {
+        path: 'howtouse',
+        element: <Howtouse />,
       },
     ],
   },
