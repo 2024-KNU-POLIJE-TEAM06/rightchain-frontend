@@ -47,7 +47,7 @@ const EachReport = () => {
           ].map((step, index) => (
             <S.ProgressStep
               key={step}
-              isActive={index + 1 <= currentStep}
+              active={index + 1 <= currentStep}
               index={index}
             >
               <span>{step}</span>

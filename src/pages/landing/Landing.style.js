@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -116,16 +116,26 @@ export const HowToUseTitleWrapper = styled.div`
 `;
 
 export const HowToUseContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
 
   width: 100%;
   height: 100%;
 `;
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
 export const HowToUseImg = styled.img`
   width: 100%;
   height: 100%;
+  opacity: 0;
+  animation: ${fadeIn} 1s ease-in-out forwards;
 `;

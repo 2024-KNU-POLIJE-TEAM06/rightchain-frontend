@@ -30,7 +30,7 @@ const SearchIcon = styled.img`
 
 const growFromRight = keyframes`
   from {
-    transform: translateX(50%) scaleX(0);
+    transform: translateX(100%) scaleX(0);
   }
   to {
     transform: translateX(0) scaleX(1);
@@ -45,8 +45,8 @@ const SearchInput = styled.input`
   border: none;
   outline: none;
   margin-right: 1rem;
-  transform-origin: right; /* 오른쪽에서 시작하는 변형 */
-  animation: ${growFromRight} 1s ease-in-out;
+  transform-origin: left;
+  animation: ${growFromRight} 0.5s ease-in-out;
 `;
 
 const SearchContainer = styled.div`

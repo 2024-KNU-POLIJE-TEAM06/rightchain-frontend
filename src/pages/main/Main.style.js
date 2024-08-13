@@ -65,12 +65,15 @@ export const AuthWrapper = styled.div`
   margin-bottom: 20px;
 `;
 
-export const IntroductionWrapper = styled.div`
+export const AdWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   width: 100%;
   height: 100%;
 
+  margin-top: 2rem;
   margin-bottom: 20px;
 `;

@@ -5,6 +5,7 @@ import Button from '../../common/Button';
 import AuthContainer from '../../components/main/AuthContainer';
 import ReportList from '../../common/reportList/ReportList';
 import Introduction from '../../components/main/Introduction';
+import Advertisement from '../../components/main/Advertisement';
 
 const Main = () => {
   const navigate = useNavigate();
@@ -40,9 +41,10 @@ const Main = () => {
         <S.AuthWrapper>
           <AuthContainer />
         </S.AuthWrapper>
-        <S.IntroductionWrapper>
-          <Introduction />
-        </S.IntroductionWrapper>
+        <Introduction />
+        <S.AdWrapper>
+          <Advertisement />
+        </S.AdWrapper>
       </S.RightWrapper>
     </S.Wrapper>
   );

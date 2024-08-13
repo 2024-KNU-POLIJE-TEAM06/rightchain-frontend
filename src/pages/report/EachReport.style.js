@@ -161,8 +161,8 @@ export const ProgressStep = styled.div`
     z-index: 2; /* Ensures text is above the background */
     color: #000000;
     transition: color 0.3s ease-in-out;
-    ${({ isActive, index }) =>
-      isActive &&
+    ${({ active, index }) =>
+      active &&
       css`
         animation: ${textColorChange} 1s ease-in-out forwards;
         animation-delay: ${(index + 1) * 1}s;
@@ -179,8 +179,8 @@ export const ProgressStep = styled.div`
     background-color: #6e9154;
     transition: width 0.3s ease-in-out;
     z-index: 1;
-    ${({ isActive, index }) =>
-      isActive &&
+    ${({ active, index }) =>
+      active &&
       css`
         animation: ${fillAnimation} 1s ease-in-out forwards;
         animation-delay: ${index * 1}s;
