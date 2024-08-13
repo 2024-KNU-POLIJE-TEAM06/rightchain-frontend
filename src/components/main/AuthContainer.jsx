@@ -32,7 +32,7 @@ const MyInfo = () => {
           name="My Reports"
           type="auth"
           action={() => {
-            navigate('my-report');
+            navigate('my-reports');
           }}
         />
       </S.ButtonWrapper>
@@ -41,7 +41,7 @@ const MyInfo = () => {
           name="My Likes"
           type="auth"
           action={() => {
-            navigate('my-like');
+            navigate('my-likes');
           }}
         />
       </S.ButtonWrapper>

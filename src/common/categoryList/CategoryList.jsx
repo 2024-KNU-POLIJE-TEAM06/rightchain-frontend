@@ -38,8 +38,13 @@ const CategoryList = ({ type }) => {
   const { onChangeCategory } = context;
 
   const onClickCategory = categoryName => {
-    setSelectedCategory(categoryName);
-    onChangeCategory(categoryName); // Update the category in the selected context's state
+    if (selectedCategory === categoryName) {
+      setSelectedCategory('');
+      onChangeCategory('');
+    } else {
+      setSelectedCategory(categoryName);
+      onChangeCategory(categoryName);
+    }
   };
 
   return (

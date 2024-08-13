@@ -74,3 +74,26 @@ export const TextList = styled.div`
   width: 100%;
   color: black;
 `;
+
+export const RedText = styled.span`
+  color: red;
+  font-weight: bold;
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 10%;
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+`;

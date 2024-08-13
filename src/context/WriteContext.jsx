@@ -1,13 +1,19 @@
 import React, { createContext, useContext, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const WriteContext = createContext();
 
 export const WriteProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
+    reportId: 0,
     title: '',
+    reportType: '',
+    date: '2024-08-11',
+    author: 'Bongki Hong',
+    likes: 0,
     content: '',
-    category: '',
     files: [{ file: null, fileURL: null }], // Initialize with one file input
   });
 
@@ -30,7 +36,6 @@ export const WriteProvider = ({ children }) => {
       const updatedFiles = [...prev.files];
       updatedFiles[index] = { file, fileURL };
 
-      // Add a new file input if there's less than 3 and the current one is filled
       if (updatedFiles.length < 3 && file) {
         updatedFiles.push({ file: null, fileURL: null });
       }
@@ -42,7 +47,7 @@ export const WriteProvider = ({ children }) => {
   const resetForm = () => {
     form.files.forEach(fileObj => {
       if (fileObj.fileURL) {
-        URL.revokeObjectURL(fileObj.fileURL); // Revoke the URL when resetting the form
+        URL.revokeObjectURL(fileObj.fileURL);
       }
     });
     setForm({
@@ -53,19 +58,35 @@ export const WriteProvider = ({ children }) => {
     });
   };
 
-  const onClickSubmit = () => {
+  const validateForm = () => {
     if (!form.title) {
       setErrorMessage('Please enter title');
-    } else if (!form.content) {
-      setErrorMessage('Please enter content');
-    } else if (!form.category) {
-      setErrorMessage('Please select category');
-    } else if (form.files.every(f => !f.file)) {
-      setErrorMessage('Please upload at least one file');
-    } else {
-      setErrorMessage('');
-      console.log(form); // Now the form includes the files array
+      return false;
     }
+    if (!form.content) {
+      setErrorMessage('Please enter content');
+      return false;
+    }
+    if (!form.category) {
+      setErrorMessage('Please select category');
+      return false;
+    }
+    if (form.files.every(f => !f.file)) {
+      setErrorMessage('Please upload at least one file');
+      return false;
+    }
+    setErrorMessage('');
+    return true;
+  };
+
+  const submitForm = () => {
+    const storedData = localStorage.getItem('reportData');
+    const ReportData = storedData ? JSON.parse(storedData) : [];
+    form.id = ReportData.length + 1;
+    ReportData.push(form);
+    localStorage.setItem('reportData', JSON.stringify(ReportData));
+
+    navigate(`/each-report?id=${form.id}`);
   };
 
   const writeValue = useMemo(
@@ -76,7 +97,8 @@ export const WriteProvider = ({ children }) => {
       onChangeCategory,
       onChangeFile,
       resetForm,
-      onClickSubmit,
+      validateForm,
+      submitForm,
     }),
     [form, errorMessage],
   );
