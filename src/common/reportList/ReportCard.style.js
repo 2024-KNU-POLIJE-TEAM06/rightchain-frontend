@@ -36,7 +36,7 @@ export const CardTitleBox = styled.div`
   justify-content: center;
   color: #fff;
   font-family: 'Poppins', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 36px;
   text-align: center;
@@ -56,11 +56,11 @@ export const CategoryBox = styled.div`
   font-weight: 500;
   line-height: 28px;
   border-radius: 8px;
-  padding: 0 10px;
+  padding: 0;
   box-sizing: border-box;
 `;
 
-export const PictureText = styled.span`
+export const CategoryText = styled.span`
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 300;

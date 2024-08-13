@@ -1,22 +1,8 @@
 import styled from 'styled-components';
 
-export const RightChain = styled.img`
-  width: 25%;
-  align-items: center;
-  height: auto;
-`;
-
-export const Hr = styled.hr`
-  width: 100%;
-  border: 0;
-  border-top: 1px solid #ddd;
-  margin: 30px;
-  height: 2px;
-  background: #3f7317;
-`;
-
 export const ReportBox = styled.div`
   display: flex;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   border: 2px solid black;
@@ -35,6 +21,27 @@ export const Title = styled.h2`
   width: 100%;
 `;
 
+export const ReportInfoContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+`;
+
+export const ReportInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const StatusContainer = styled.div`
+  display: flex;
+  width: 70%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: space-between;
+`;
+
 export const Status = styled.h3`
   font-family: 'Poppins', sans-serif;
   font-size: 22px;
@@ -48,6 +55,7 @@ export const ContentContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 100%;
 `;
 
 export const Description = styled.div`
@@ -87,7 +95,7 @@ export const BottomButton = styled.button`
   border-radius: 8px;
   padding: 10px 20px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-left: 20px;
   transition: background-color 0.3s ease;
   box-shadow: 0px 4px 4px 0px #00000040;
 `;
