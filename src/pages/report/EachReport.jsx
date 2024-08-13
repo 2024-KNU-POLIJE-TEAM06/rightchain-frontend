@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Modal from '../../common/modal/PopupReport';
 import * as S from './EachReport.style';
@@ -18,6 +18,14 @@ const EachReport = () => {
     return <div>Report not found</div>;
   }
 
+  const [currentStep, setCurrentStep] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCurrentStep(4);
+    }, 100);
+  }, []);
+
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -29,7 +37,25 @@ const EachReport = () => {
   return (
     <>
       <S.ReportBox>
+        <S.ProgressBarContainer>
+          {[
+            'REPORT_SUBMITTED',
+            'CASE_UNDER_REVIEW',
+            'REVIEW_RESULT_REPORTED',
+            'FINAL_JUDGEMENT',
+            'CASE_CLOSED',
+          ].map((step, index) => (
+            <S.ProgressStep
+              key={step}
+              isActive={index + 1 <= currentStep}
+              index={index}
+            >
+              <span>{step}</span>
+            </S.ProgressStep>
+          ))}
+        </S.ProgressBarContainer>
         <S.Title>{selectedReport.title}</S.Title>
+        <S.Status>{selectedReport.category}</S.Status>
         <S.ReportInfoContainer>
           <S.ReportInfo>Author : {selectedReport.author}</S.ReportInfo>
           <S.ReportInfo>Date : {selectedReport.date}</S.ReportInfo>
@@ -37,10 +63,6 @@ const EachReport = () => {
         <S.ContentContainer>
           <S.Description>{selectedReport.content}</S.Description>
         </S.ContentContainer>
-        <S.StatusContainer>
-          <S.Status>{selectedReport.category}</S.Status>
-          <S.Status>REPORT_SUBMITTED</S.Status>
-        </S.StatusContainer>
       </S.ReportBox>
       <S.BottomSection>
         <S.TextContainer>

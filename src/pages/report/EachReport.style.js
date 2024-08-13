@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 export const ReportBox = styled.div`
   display: flex;
@@ -17,6 +17,7 @@ export const Title = styled.h2`
   font-size: 24px;
   font-weight: 700;
   text-align: center;
+  margin-bottom: 1px;
   color: black;
   width: 100%;
 `;
@@ -44,9 +45,10 @@ export const StatusContainer = styled.div`
 
 export const Status = styled.h3`
   font-family: 'Poppins', sans-serif;
-  font-size: 22px;
+  font-size: 13px;
   font-weight: 700;
   text-align: center;
+  margin-top: 1px;
   color: #6e9154;
   border-radius: 4px;
 `;
@@ -114,4 +116,74 @@ export const Text = styled.p`
   letter-spacing: -1px;
   text-align: center;
   color: #9a9a9a;
+`;
+
+export const ProgressBarContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+`;
+
+const fillAnimation = keyframes`
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+`;
+
+const textColorChange = keyframes`
+  from {
+    color: #000000;
+  }
+  to {
+    color: #ffffff;
+  }
+`;
+
+export const ProgressStep = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 18%;
+  height: 30px;
+  background-color: #d3d3d3;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    position: relative;
+    z-index: 2; /* Ensures text is above the background */
+    color: #000000;
+    transition: color 0.3s ease-in-out;
+    ${({ isActive, index }) =>
+      isActive &&
+      css`
+        animation: ${textColorChange} 1s ease-in-out forwards;
+        animation-delay: ${(index + 1) * 1}s;
+      `}
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: #6e9154;
+    transition: width 0.3s ease-in-out;
+    z-index: 1;
+    ${({ isActive, index }) =>
+      isActive &&
+      css`
+        animation: ${fillAnimation} 1s ease-in-out forwards;
+        animation-delay: ${index * 1}s;
+      `}
+  }
 `;

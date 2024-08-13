@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <S.Wrapper>
       <S.Content>
-        <p>Footer</p>
+        <p>ⓒ 2024. KP06. All rights reserved.</p>
       </S.Content>
     </S.Wrapper>
   );
