@@ -27,7 +27,7 @@ const Advertisement = () => {
       </S.AdContainer>
       <S.IndicatorContainer>
         {ads.map((_, index) => (
-          <S.Indicator key={_} isActive={index === currentAdIndex} />
+          <S.Indicator key={_} active={index === currentAdIndex} />
         ))}
       </S.IndicatorContainer>
     </S.AdWrapper>

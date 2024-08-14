@@ -42,6 +42,6 @@ export const Indicator = styled.div`
   width: 10px;
   height: 10px;
   margin: 0 5px;
-  background-color: ${props => (props.isActive ? 'black' : '#ccc')};
+  background-color: ${props => (props.active ? 'black' : '#ccc')};
   border-radius: 50%;
 `;
