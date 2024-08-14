@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
+import { useSearch } from '../context/SearchContext';
 import SearchIconImg from '../asset/search.png';
 
 const BannerWrapper = styled.div`
@@ -59,16 +60,20 @@ const SearchContainer = styled.div`
 
 const Banner = ({ title }) => {
   const [isSearchVisible, setIsSearchVisible] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
+  const { searchKeyword, setSearchKeyword } = useSearch() || {};
 
   const handleSearchClick = () => {
     if (!isSearchVisible) {
       setIsSearchVisible(true);
     }
+
+    if (isSearchVisible && searchKeyword) {
+      console.log('Search:', searchKeyword);
+    }
   };
 
   const handleSearchChange = e => {
-    setSearchTerm(e.target.value);
+    setSearchKeyword(e.target.value);
   };
 
   return (
@@ -79,7 +84,7 @@ const Banner = ({ title }) => {
           {isSearchVisible && (
             <SearchInput
               type="text"
-              value={searchTerm}
+              value={searchKeyword}
               onChange={handleSearchChange}
               placeholder="Enter search term..."
             />

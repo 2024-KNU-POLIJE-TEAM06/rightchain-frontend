@@ -1,20 +1,17 @@
 import React, { createContext, useContext, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import api from '../api/axios';
 
 const WriteContext = createContext();
 
 export const WriteProvider = ({ children }) => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
-    reportId: 0,
     title: '',
-    reportType: '',
-    date: '2024-08-11',
-    author: 'Bongki Hong',
-    likes: 0,
     content: '',
-    files: [{ file: null, fileURL: null }], // Initialize with one file input
+    reportType: '',
+    files: [[]],
   });
 
   const [errorMessage, setErrorMessage] = useState('');
@@ -25,7 +22,7 @@ export const WriteProvider = ({ children }) => {
   };
 
   const onChangeCategory = categoryName => {
-    setForm(prev => ({ ...prev, category: categoryName }));
+    setForm(prev => ({ ...prev, reportType: categoryName }));
   };
 
   const onChangeFile = (e, index) => {
@@ -53,7 +50,7 @@ export const WriteProvider = ({ children }) => {
     setForm({
       title: '',
       content: '',
-      category: '',
+      reportType: '',
       files: [{ file: null, fileURL: null }], // Reset to one empty file input
     });
   };
@@ -67,26 +64,43 @@ export const WriteProvider = ({ children }) => {
       setErrorMessage('Please enter content');
       return false;
     }
-    if (!form.category) {
+    if (!form.reportType) {
       setErrorMessage('Please select category');
       return false;
     }
-    if (form.files.every(f => !f.file)) {
-      setErrorMessage('Please upload at least one file');
-      return false;
-    }
+
     setErrorMessage('');
     return true;
   };
 
-  const submitForm = () => {
-    const storedData = localStorage.getItem('reportData');
-    const ReportData = storedData ? JSON.parse(storedData) : [];
-    form.id = ReportData.length + 1;
-    ReportData.push(form);
-    localStorage.setItem('reportData', JSON.stringify(ReportData));
+  const submitForm = async () => {
+    if (!validateForm()) return;
 
-    navigate(`/each-report?id=${form.id}`);
+    const postForm = {
+      title: form.title,
+      content: form.content,
+      reportType: form.reportType.toUpperCase(),
+      filesId: [],
+    };
+
+    try {
+      const response = await api.post('/reports', postForm);
+      if (response.status === 201) {
+        navigate(`/each-report?id=${response.data.reportId}`);
+      } else {
+        setErrorMessage('Failed to submit the report.');
+      }
+    } catch (error) {
+      if (error.response) {
+        console.error('Server responded with an error:', error.response.data);
+        setErrorMessage(
+          error.response.data.error || 'Error submitting the form.',
+        );
+      } else {
+        console.error('Error submitting form:', error.message);
+        setErrorMessage('Error submitting the form.');
+      }
+    }
   };
 
   const writeValue = useMemo(

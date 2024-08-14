@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 const SearchContext = createContext();
 
 export const SearchProvider = ({ children }) => {
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState('all');
+  const [searchKeyword, setSearchKeyword] = useState('');
 
   const onChangeCategory = categoryName => {
     setCategory(categoryName);
@@ -13,9 +14,12 @@ export const SearchProvider = ({ children }) => {
   const searchValue = useMemo(
     () => ({
       category,
+      searchKeyword,
+      setSearchKeyword,
+      setCategory,
       onChangeCategory,
     }),
-    [category],
+    [category, searchKeyword],
   );
 
   return (

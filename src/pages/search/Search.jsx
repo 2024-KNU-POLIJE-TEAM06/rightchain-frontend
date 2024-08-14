@@ -7,6 +7,16 @@ import ReportList from '../../common/reportList/ReportList';
 import CategoryList from '../../common/categoryList/CategoryList';
 
 const Search = ({ mode }) => {
+  let type;
+
+  if (mode === 'search') {
+    type = 'topLiked';
+  } else if (mode === 'My Reports') {
+    type = 'myReport';
+  } else if (mode === 'My Likes') {
+    type = 'myLikes';
+  }
+
   return (
     <SearchProvider>
       <S.Wrapper>
@@ -18,7 +28,7 @@ const Search = ({ mode }) => {
             <CategoryList type="search" />
           </S.CategoryWrapper>
           <S.ReportListWrapper>
-            <ReportList />
+            <ReportList type={type} />
           </S.ReportListWrapper>
         </S.ContentWrapper>
       </S.Wrapper>

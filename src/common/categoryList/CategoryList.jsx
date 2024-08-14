@@ -24,14 +24,13 @@ Category.propTypes = {
 const CategoryList = ({ type }) => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const categories = [
-    'Bullying',
-    'Discrimination',
-    'Harassment',
-    'Privacy Violation',
-    'Freedom of speech violation',
-    'Property Rights Violation',
-    'Scamming',
-    'Others',
+    'SCAMMING',
+    'VIOLATION',
+    'HARASSMENT',
+    'BULLYING',
+    'DISCRIMINATION',
+    'SEX',
+    'RACISM',
   ];
 
   const context = type === 'write' ? useWrite() : useSearch();

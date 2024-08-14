@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useAuth } from '../../context/AuthContext';
 import HeartImg from '../../asset/heart-fill.png';
 import NoteImg from '../../asset/journal-text.png';
 
@@ -37,7 +38,7 @@ const UserIdWrapper = styled.div`
 
   margin-bottom: 10px;
 
-  font-size: 30px;
+  font-size: 24px;
 `;
 
 const UserActContainer = styled.div`
@@ -63,9 +64,11 @@ const UserActWrapper = styled.div`
 `;
 
 const UserInfo = () => {
+  const { userId } = useAuth();
+
   return (
     <InfoWrapper>
-      <UserIdWrapper>ID: User0612</UserIdWrapper>
+      <UserIdWrapper>ID: {userId}</UserIdWrapper>
       <UserActContainer>
         <UserActWrapper>
           <img src={NoteImg} alt="" style={{ marginRight: '10px' }} />

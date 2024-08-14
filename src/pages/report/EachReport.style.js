@@ -91,7 +91,7 @@ export const BottomButton = styled.button`
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 700;
-  background-color: white;
+  background-color: ${({ liked }) => liked};
   color: black;
   border: none;
   border-radius: 8px;

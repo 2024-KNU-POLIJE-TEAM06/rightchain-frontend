@@ -34,7 +34,7 @@ const Main = () => {
           </S.ButtonWrapper>
         </S.ButtonContainer>
         <S.ReportListWrapper>
-          <ReportList />
+          <ReportList type="topLiked" />
         </S.ReportListWrapper>
       </S.LeftWrapper>
       <S.RightWrapper>
