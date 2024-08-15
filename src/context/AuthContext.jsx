@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
   }, [isLoggedIn, navigate]);
 
   const login = () => {
-    window.location.href = `http://localhost:53000/oauth2/authorization/google?redirect_uri=http://localhost:3000/`;
+    window.location.href = `http://ec2-108-136-47-162.ap-southeast-3.compute.amazonaws.com/oauth2/authorization/google`;
     setIsLoggedIn(true);
   };
 
