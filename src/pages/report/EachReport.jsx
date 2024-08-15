@@ -114,6 +114,7 @@ const EachReport = () => {
       <Modal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
+        blockData={reportData.chains}
         type="block"
         submit={() => {}}
       />

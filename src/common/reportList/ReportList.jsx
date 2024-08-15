@@ -8,8 +8,9 @@ import * as S from './ReportList.style';
 
 const ReportList = ({ type }) => {
   const [ReportData, setReportData] = useState([]);
+  const [originalData, setOriginalData] = useState([]);
   const navigate = useNavigate();
-  const { category } = useSearch() || {};
+  const { category, searchKeyword } = useSearch() || {};
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,15 +38,31 @@ const ReportList = ({ type }) => {
             break;
           }
         }
+        setOriginalData(Array.isArray(data) ? data : []);
         setReportData(Array.isArray(data) ? data : []);
       } catch (error) {
         console.error('Error fetching report data:', error);
-        setReportData([]); // 에러 발생 시 기본값으로 빈 배열 설정
+        setOriginalData([]);
+        setReportData([]);
       }
     };
 
     fetchData();
   }, [type]);
+
+  useEffect(() => {
+    if (type === 'topLiked') return;
+
+    const filteredData = originalData.filter(v => {
+      const matchesCategory = category === 'all' || v.reportType === category;
+      const matchesSearch =
+        !searchKeyword ||
+        v.title.toLowerCase().includes(searchKeyword.toLowerCase());
+
+      return matchesCategory && matchesSearch;
+    });
+    setReportData(filteredData);
+  }, [searchKeyword, category, originalData, type]);
 
   const onClickCard = id => {
     navigate(`/each-report?id=${id}`);
@@ -54,14 +71,9 @@ const ReportList = ({ type }) => {
   return (
     <S.ScrollContainer>
       <S.Wrapper>
-        {ReportData.filter(v => {
-          if (type === 'topLiked') {
-            return true;
-          }
-          return category === 'all' || v.reportType === category;
-        }).map(v => (
+        {ReportData.map(v => (
           <S.MainCard
-            key={`${v.title}-${v.createdAt}`}
+            key={`${v.title}-${v.createTime}`}
             onClick={() => onClickCard(v.reportId)}
           >
             <ReportCard
@@ -71,6 +83,7 @@ const ReportList = ({ type }) => {
               date={v.createTime.substring(0, 10)}
               author={v.accountName}
               likes={v.likes}
+              isCaseClosed={v.chains.length === 5}
             />
           </S.MainCard>
         ))}

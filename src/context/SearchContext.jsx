@@ -1,11 +1,24 @@
-import React, { createContext, useContext, useMemo, useState } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const SearchContext = createContext();
 
 export const SearchProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [category, setCategory] = useState('all');
   const [searchKeyword, setSearchKeyword] = useState('');
+
+  useEffect(() => {
+    setCategory('all');
+    setSearchKeyword('');
+  }, [navigate]);
 
   const onChangeCategory = categoryName => {
     setCategory(categoryName);

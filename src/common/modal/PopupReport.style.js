@@ -65,6 +65,9 @@ export const TitleBox = styled.div`
 `;
 
 export const TextList = styled.div`
+  justify-content: space-between;
+  align-items: center;
+
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
   letter-spacing: -1px;
@@ -73,6 +76,27 @@ export const TextList = styled.div`
   padding: 10px;
   width: 100%;
   color: black;
+`;
+
+export const ChainTextList = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  letter-spacing: -1px;
+  text-align: left;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  color: black;
+
+  p {
+    color: red;
+    cursor: pointer;
+  }
 `;
 
 export const RedText = styled.span`
@@ -96,4 +120,30 @@ export const ButtonWrapper = styled.div`
   width: 100%;
   height: 40px;
   margin-top: 20px;
+`;
+
+export const Tooltip = styled.div`
+  position: absolute;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  top: 20%;
+  left: 125%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 300px;
+  z-index: 1000;
+  overflow: hidden; /* 텍스트가 박스 밖으로 넘어가지 않도록 */
+  text-overflow: ellipsis; /* 긴 텍스트의 말줄임표 처리 */
+  word-wrap: break-word; /* 긴 단어를 줄 바꿈 */
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
 `;

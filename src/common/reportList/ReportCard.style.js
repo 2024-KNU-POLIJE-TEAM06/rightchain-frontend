@@ -100,6 +100,17 @@ export const DescText = styled.span`
   margin-bottom: 10px;
 `;
 
+export const BottomContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+`;
+
 export const BottomBox = styled.div`
   background: #729e4f;
   width: 30%;
@@ -113,7 +124,23 @@ export const BottomBox = styled.div`
   font-weight: 500;
   border-radius: 8px;
   box-sizing: border-box;
-  position: absolute;
+  bottom: 10px;
+  left: 10px;
+`;
+
+export const CaseBox = styled.div`
+  background: #729e4f;
+  width: 30%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  box-sizing: border-box;
   bottom: 10px;
   left: 10px;
 `;
